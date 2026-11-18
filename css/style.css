@@ -1,0 +1,119 @@
+:root{--bg:#faf6f0;--card:#fff;--ink:#22201c;--muted:#625c53;--line:#e6dfd3;--acc:#b4462f;--acc-ink:#fff;--soft:#fbeee9;--bad:#a23b3b}
+@media (prefers-color-scheme:dark){:root{--bg:#17150f;--card:#211e18;--ink:#ece7de;--muted:#aba396;--line:#352f26;--acc:#ec8a6f;--acc-ink:#1a0f0b;--soft:#2c211c;--bad:#e58a8a}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--acc)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:8px;background:var(--card);padding:8px 12px;z-index:9}
+header.site{background:var(--card);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-weight:800;text-decoration:none;color:var(--ink);font-size:1.1rem}
+nav.top a{margin-left:16px;text-decoration:none;color:var(--muted)}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+main.wrap{padding-top:24px;padding-bottom:48px}
+h1{font-size:clamp(1.6rem,4vw,2.2rem);line-height:1.2;margin:.2em 0 .4em}
+h2{font-size:1.3rem;margin:1.8em 0 .5em}
+.lead{color:var(--muted);font-size:1.05rem;margin-top:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.tile{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-decoration:none;color:var(--ink)}
+.tile:hover{border-color:var(--acc)}
+.tile strong{display:block;margin-bottom:4px}.tile span{color:var(--muted);font-size:.93rem}
+label{display:block;font-weight:600;margin:12px 0 4px}
+label.check{display:flex;gap:8px;align-items:center;font-weight:600;margin-top:44px}
+label.check input{width:auto;margin:0}
+.hint{font-weight:400;color:var(--muted);font-size:.88rem}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+textarea{resize:vertical;line-height:1.45}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+button{background:var(--acc);color:var(--acc-ink);border:0;border-radius:10px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;margin-top:16px}
+button.ghost{background:transparent;color:var(--acc);border:1px solid var(--acc)}
+button:disabled{opacity:.45;cursor:default}
+.results{background:var(--soft);border-radius:12px;padding:14px 16px;margin-top:18px}
+.results:empty{display:none}
+.err{color:var(--bad);font-weight:600}
+.note{font-size:.9rem;color:var(--muted);border-left:3px solid var(--line);padding-left:12px}
+.shop{border:1px dashed var(--acc);border-radius:12px;padding:14px 16px;margin:24px 0}
+.shop small{display:block;color:var(--muted)}
+footer.site{border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer.site a{color:var(--muted);margin-right:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+
+/* Pass-the-phone reveal */
+.people{display:flex;flex-wrap:wrap;gap:8px}
+.people button{margin:0}
+.reveal{background:var(--card);border:2px solid var(--acc);border-radius:14px;padding:20px;text-align:center;margin-top:14px}
+.reveal .who{font-size:1.8rem;font-weight:800;margin:6px 0}
+
+/* ---------- Printable sheets (always black on white, even in dark mode) ---------- */
+.sheets:empty{display:none}
+.sheets{margin:20px 0}
+.sheets .more{color:var(--muted);font-size:.95rem}
+.sheet{background:#fff;color:#1b1b1b;border:1px solid #d9d4cb;border-radius:6px;padding:28px;margin:0 0 18px;overflow-x:auto;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.sheet h2{margin:0 0 4px;font-size:1.9rem;text-align:center;color:#1b1b1b}
+.sheet .sub{text-align:center;color:#555;margin:0 0 18px}
+.sheet table{width:100%;border-collapse:collapse}
+.sheet th,.sheet td{border:1.5px solid #333;padding:8px 6px;text-align:center}
+.sheet th{background:#f1ece4;font-size:.85rem}
+.sheet td.label,.sheet th.label{text-align:left;font-weight:600;min-width:150px}
+.sheet .box{display:inline-block;width:22px;height:22px;border:1.5px solid #777;border-radius:4px}
+.sheet .foot{margin:18px 0 0;text-align:center;font-weight:600;font-size:1.05rem}
+.sheet .credit{margin:14px 0 0;text-align:center;color:#999;font-size:.7rem}
+/* habit grid */
+.sheet.habit table{table-layout:fixed;min-width:760px}
+.sheet.habit tr:first-child th.label{width:20%}
+.sheet.habit th,.sheet.habit td{padding:4px 1px;font-size:.72rem}
+.sheet.habit td.label,.sheet.habit th.label{font-size:.85rem;min-width:140px;padding-left:6px}
+.sheet.habit th.we{background:#e4ddd1}
+.sheet.habit td.cell{width:2.6%;height:30px}
+/* reward chart */
+.sheet .goal{text-align:center;font-size:1.25rem;margin:4px 0 18px}
+.shapes{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;justify-items:center;max-width:620px;margin:0 auto}
+.shapes svg{width:100%;max-width:96px;height:auto}
+.shapes text{font:600 15px system-ui,sans-serif;fill:#888}
+/* bingo */
+.sheet.bingo table{table-layout:fixed;max-width:640px;margin:0 auto}
+.sheet.bingo th{font-size:2rem;background:#fff;border:0;padding:4px 0}
+.sheet.bingo td{height:110px;font-size:.92rem;line-height:1.25;word-break:break-word;padding:6px}
+.sheet.bingo td.free{font-weight:800;font-size:1.2rem;background:#f1ece4}
+/* secret santa slips: hidden on screen, printed only */
+.print-only,.sheet.later{display:none}
+.slips{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.slip{border:1.5px dashed #666;break-inside:avoid}
+.slip > div{height:1.3in;padding:10px 14px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.slip .fold{border-top:1.5px dashed #999}
+.slip .to{font-size:1.15rem;font-weight:700}
+.slip .gift{font-size:1.35rem;font-weight:800}
+.slip .small{font-size:.8rem;color:#555}
+
+@media (max-width:640px){
+  .sheet{padding:14px}
+  .sheet h2{font-size:1.4rem}
+  .shapes{grid-template-columns:repeat(4,1fr)}
+  .sheet.bingo td{height:70px;font-size:.7rem;padding:3px}
+  .sheet.bingo th{font-size:1.4rem}
+}
+
+@page{margin:12mm}
+@page wide{size:landscape;margin:10mm}
+@media print{
+  body{background:#fff}
+  header.site,footer.site,main > *:not(.sheets),.sheets .more{display:none !important}
+  main.wrap{max-width:none;padding:0}
+  .sheets{margin:0}
+  .print-only,.sheet.later{display:block}
+  .screen-only{display:none !important}
+  .sheet{border:0;border-radius:0;padding:0;margin:0;overflow:visible;break-after:page}
+  .sheet:last-child{break-after:auto}
+  body[data-tool="habit"]{page:wide}
+  .sheet .box{width:26px;height:26px}
+  .sheet:not(.habit):not(.bingo) td{padding:16px 6px}
+  .sheet.habit td{height:46px}
+  .shapes{gap:22px 10px}
+  .sheet.bingo td{height:1.25in;font-size:11pt}
+  .sheet.bingo td.free{font-size:14pt}
+  .sheet th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
